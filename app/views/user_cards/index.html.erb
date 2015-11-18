@@ -1,0 +1,7 @@
+<% @user_cards.each do |uc| %>
+
+	<p>
+	<%= link_to(uc.user.fname, user_path(uc.user.id)) %> can use this <%=link_to(uc.card.card_type, card_path(uc.card.id)) %>
+	</p>
+
+<% end %>

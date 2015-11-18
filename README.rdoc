@@ -1,0 +1,38 @@
+Wallet app 
+
+main validations needed-
+uniqueness, presence, numericality, inclusion,
+
+ActiveRecord Validations are callbacks that you add to your models to ensure that data is typically: 
+
+present, not duplicate, of the correct format, meets any other important constraints
+
+Possible validations:
+
+There are two different syntaxes for validations. One is the validates syntax, the other is the explicit method syntax. 
+
+validates|presence 
+
+validates :attribute, presence: true
+
+takes an attribute to validate 
+and a hash of validation options, 
+presence will check if an attribute is blank if set to true. 
+
+validates|acceptance 
+
+validates :terms, acceptance: true 
+
+acceptance will make sure that a checkbox value returns true, for instance when accepting a website's terms of service. 
+
+validates|confirmation 
+
+validates :password, confirmation: true, presence: true 
+
+confirmation will create a "virtual attribute" on your model to check a form field against for equality. You can use this virtual attribute in your views 
+
+<%=f.text_field :password_confirmation%>
+(Don't forget to add this virtual attribute to your strong parameters)
+
+validates|incl
+

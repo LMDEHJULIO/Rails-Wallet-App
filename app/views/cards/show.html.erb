@@ -1,0 +1,16 @@
+
+
+<p> Card Number: <%= @card.number %> </p>
+<p> Expired Month: <%= @card.expiration_month %> </p>
+<p> Expired Year: <%= @card.expiration_year %> </p>
+<p> Card Number: <%= @card.card_type %> </p>
+
+<% if @ownership.nil? %>
+  <%= link_to("delete", card_path(@card.id), method: :delete) %> 
+
+<% else %>
+
+  <%= link_to('remove from my wallet', user_card_path(card_id: @card.id, user_id: session[:user_id]), method: :post) %>
+  
+ <% end %>
+

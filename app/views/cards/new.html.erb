@@ -1,0 +1,26 @@
+<%= form_for Card.new do |f| %>
+
+	<p>
+		<%= f.label :number %>
+		<%= f.text_field :number %>
+	</p>
+	
+	<p>
+		<%= f.label :card_type %>
+		<%= f.text_field :card_type %>
+	</p>
+	
+	<p>
+		<%= f.label :expiration_month %>
+		<%= f.text_field :expiration_month %>
+	</p>
+
+	<p>
+		<%= f.label :expiration_year %>
+		<%= f.text_field :expiration_year %>
+	</p>
+
+	<%= f.submit "Submit" %>
+
+
+<% end %>

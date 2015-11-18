@@ -1,0 +1,13 @@
+<h1>Hello <%= @user.fname %></h1>
+
+<h1>Your cards</h1>
+
+
+
+	<p> 
+		<%= @user.fname %>
+		<%= @user.lname %><br />
+		Balance: <%= number_to_currency(@user.balance) %><br />
+	</p>
+
+	<%= link_to "Edit Profile", edit_user_path %>

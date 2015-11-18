@@ -1,0 +1,16 @@
+<% @card.each do |card| %>
+	<div id="card_content">
+		<p> Card Number: <%= card.number %></p>
+		<p> Expiration Month: <%= card.expiration_month %></p>
+		<p> Expiration Year: <%= card.expiration_year %></p>
+		<p> Card Type: <%= card.card_type %></p>
+			
+		<%if @ownership.nil? %>
+			<%= link_to("add to my wallet", user_cards_path(card_id: card.id, user_id: session[:user_id]), method: :post) %>
+		<% end %>
+
+			
+		    <%= link_to("delete", card_path(card.id), method: :delete) %>
+
+	</div>
+<% end %>
